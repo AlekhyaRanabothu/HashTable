@@ -1,0 +1,16 @@
+
+# This is a makefile
+
+
+all:  lab4.o SList.o
+	g++ lab4.o SList.o -o SList
+
+lab4.o: lab4.cpp SList.h
+	g++ -c lab4.cpp  -o lab4.o
+	
+SList.o: SList.cpp LNode.h HashTable.h SList.h
+	g++ -c SList.cpp -o SList.o
+
+clean: 
+	rm *.o
+
